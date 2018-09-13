@@ -17,7 +17,7 @@ class App extends Component {
       <LoadingBar />
         { this.props.loading === true 
           ? null
-          : <TweetPage />}
+          : <TweetPage match={{params: {id: '2mb6re13q842wu8n106bhk'}}}/>}
       </div>
     )
   }
