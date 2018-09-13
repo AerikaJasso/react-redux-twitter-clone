@@ -11,7 +11,7 @@ export default function Nav () {
           </NavLink>
         </li>
         <li>
-          <NavLink to='' activeClassName='active'>
+          <NavLink to='/new' activeClassName='active'>
             New Tweet
           </NavLink>
         </li>
