@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { formatTweet, formatDate } from '../utils/helpers'
 import { handleToggleTweet } from '../actions/tweets'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import {
         TiHeartOutline, 
         TiHeartFullOutline,
@@ -23,7 +23,8 @@ class Tweet extends Component {
   }
   toParent = (e, id) => {
     e.preventDefault()
-    // todo: Redirect to parent Tweet.
+    
+    this.props.history.push(`/tweet/${id}`)
   }
   render () {
     const { tweet } = this.props
@@ -88,4 +89,4 @@ function mapStateToProps ({authedUser, users, tweets}, { id }) {
   }
 }
 
-export default connect(mapStateToProps)(Tweet)
+export default withRouter(connect(mapStateToProps)(Tweet))
